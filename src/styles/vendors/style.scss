@@ -36,6 +36,8 @@
       font-weight: 600;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 5px;
+
+      
     }
 
     .element__symbol {
@@ -57,4 +59,10 @@
 
   }
 }
-
+@include croisan() {
+  @for $i from 1 through 18 {
+      .element[data-group="#{$i}"] {
+        grid-column: $i;
+      }
+  }
+}

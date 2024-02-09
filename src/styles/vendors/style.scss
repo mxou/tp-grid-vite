@@ -55,7 +55,7 @@
 
   @include croisan() {
     grid-template-columns: repeat(18, minmax(10px, 1fr));
-    grid-template-rows: repeat(7, minmax(10px, 1fr));
+    grid-template-rows: repeat(9, minmax(10px, 1fr));
 
   }
 }
@@ -65,4 +65,29 @@
         grid-column: $i;
       }
   }
+
+  
 }
+
+.element--lanthanide {
+  grid-row: 8;
+  grid-column: 4;
+  @for $i from 1 through 15 {
+    .element--lanthanide:nth-child(#{$i}) {
+      grid-column: $i + 1;
+    }
+  }
+}
+
+.element--actinide {
+  grid-row: 9;
+  grid-column: 4;
+  @for $i from 1 through 15 {
+    .element--actinide:nth-child(#{$i}) {
+      grid-column: $i + 1;
+    }
+  }
+}
+
+
+

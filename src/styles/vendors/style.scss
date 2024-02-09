@@ -1,5 +1,5 @@
 @import 'reset.scss';
-$types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal alkalineEarthMetal actinide metalloid otherNonMetal;
+
 
 * {
     box-sizing: border-box;
@@ -11,13 +11,14 @@ $types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal alka
 
   
 
+  $types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal alkalineEarthMetal actinide metalloid otherNonMetal;
+  $baguette: 0;
   @each $type in $types {
-
-    $baguette: random($limit: 360);
-    $saturation: random($limit: 100);
     
-    .element {
-        background-color: hsl($baguette, $saturation * 1%, $saturation * 1%);
+    $baguette: $baguette + 360 / length($types);
+
+    .element--#{$type}{
+        background-color: hsl($baguette *1deg, 70%, 70%);
       }
 
     }
